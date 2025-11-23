@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 2D Car Learning Simulation</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚗 AI 2D Car Learning Simulation</h1>
+            <p>Watch neural networks learn to drive using genetic algorithms</p>
+        </header>
+
+        <div class="main-content">
+            <div class="canvas-container">
+                <canvas id="simulationCanvas"></canvas>
+            </div>
+
+            <div class="control-panel">
+                <div class="stats-section">
+                    <h3>Statistics</h3>
+                    <div class="stat-row">
+                        <span>Generation:</span>
+                        <span id="generation">1</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>Alive Cars:</span>
+                        <span id="aliveCars">0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>Best Fitness:</span>
+                        <span id="bestFitness">0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>Avg Fitness:</span>
+                        <span id="avgFitness">0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>Time:</span>
+                        <span id="timeElapsed">0s</span>
+                    </div>
+                </div>
+
+                <div class="controls-section">
+                    <h3>Controls</h3>
+
+                    <div class="control-group">
+                        <label for="populationSize">Population Size:</label>
+                        <input type="range" id="populationSize" min="10" max="200" value="50">
+                        <span id="populationSizeValue">50</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="mutationRate">Mutation Rate:</label>
+                        <input type="range" id="mutationRate" min="1" max="50" value="10">
+                        <span id="mutationRateValue">10%</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="simulationSpeed">Simulation Speed:</label>
+                        <input type="range" id="simulationSpeed" min="1" max="10" value="1">
+                        <span id="simulationSpeedValue">1x</span>
+                    </div>
+
+                    <div class="control-group checkbox-group">
+                        <label>
+                            <input type="checkbox" id="showSensors" checked>
+                            Show Sensors (Best Car)
+                        </label>
+                    </div>
+
+                    <div class="control-group checkbox-group">
+                        <label>
+                            <input type="checkbox" id="showAllCars" checked>
+                            Show All Cars
+                        </label>
+                    </div>
+                </div>
+
+                <div class="buttons-section">
+                    <button id="startBtn" class="btn btn-primary">Start</button>
+                    <button id="pauseBtn" class="btn btn-secondary">Pause</button>
+                    <button id="resetBtn" class="btn btn-danger">Reset</button>
+                    <button id="nextGenBtn" class="btn btn-info">Next Generation</button>
+                </div>
+
+                <div class="track-section">
+                    <h3>Track Selection</h3>
+                    <select id="trackSelect">
+                        <option value="oval">Oval Track</option>
+                        <option value="complex">Complex Track</option>
+                        <option value="zigzag">Zigzag Track</option>
+                    </select>
+                </div>
+
+                <div class="neural-network-display">
+                    <h3>Best Car Neural Network</h3>
+                    <canvas id="nnCanvas" width="200" height="150"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3>How It Works</h3>
+            <ul>
+                <li><strong>Sensors:</strong> Each car has 5 sensors detecting distance to track edges</li>
+                <li><strong>Neural Network:</strong> Takes sensor inputs and outputs steering/acceleration</li>
+                <li><strong>Genetic Algorithm:</strong> Best performers pass genes to next generation</li>
+                <li><strong>Fitness:</strong> Based on distance traveled and checkpoints reached</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/neural-network.js"></script>
+    <script src="js/track.js"></script>
+    <script src="js/car.js"></script>
+    <script src="js/genetic-algorithm.js"></script>
+    <script src="js/simulation.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
