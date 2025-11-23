@@ -244,8 +244,8 @@ class Simulation {
      */
     drawInfo() {
         const padding = 10;
+        const ctx = this.ctx;
 
-        ctx = this.ctx;
         ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
         ctx.fillRect(padding, padding, 150, 60);
 

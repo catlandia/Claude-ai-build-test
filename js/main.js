@@ -21,14 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
         loadSaved: false
     });
 
-    // Render initial state
-    simulation.render();
-
     // Set up control event handlers
     setupControls();
 
-    console.log('AI 2D Car Learning Simulation initialized');
-    console.log('Click "Start" to begin the simulation');
+    // Auto-start the simulation
+    simulation.start();
+    updateButtonStates(true);
+
+    console.log('AI 2D Car Learning Simulation started!');
 });
 
 /**
