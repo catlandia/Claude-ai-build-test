@@ -76,10 +76,10 @@ class Track {
             });
         }
 
-        // Starting position (bottom of track, pointing right)
-        this.startX = centerX;
-        this.startY = centerY + (outerRadiusY + innerRadiusY) / 2;
-        this.startAngle = -Math.PI / 2;
+        // Starting position (right side of track, pointing down/counterclockwise)
+        this.startX = centerX + (outerRadiusX + innerRadiusX) / 2;
+        this.startY = centerY;
+        this.startAngle = Math.PI; // Pointing down (following track counterclockwise)
     }
 
     /**

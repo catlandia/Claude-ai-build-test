@@ -27,7 +27,7 @@ class Car {
         this.checkpointsPassed = 0;
         this.lastCheckpoint = -1;
         this.timeSinceLastCheckpoint = 0;
-        this.maxIdleTime = 150; // Frames before dying if no progress
+        this.maxIdleTime = 300; // Frames before dying if no progress (5 seconds)
 
         // Sensors
         this.sensorCount = 5;
